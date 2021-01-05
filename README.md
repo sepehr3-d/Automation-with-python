@@ -24,7 +24,7 @@ i = 588
 for curr_row in range(1, i):
 	Vocabulary = sheet.cell_value(curr_row, 0)
 
-# search your file from a site
+# search your words from excel to site
 vacab.clear()
 vacab.send_keys(Vocabulary)
 vacab.send_keys(Keys.RETURN)
