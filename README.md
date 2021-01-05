@@ -50,7 +50,7 @@ except:
 	pass
 
 
-# load your file again for saving items in th sheet
+# load your file again for saving items in the sheet
 wb = load_workbook(filename=r'C:\Users\sepehr\PycharmProjects\pythonProjects\pythonProject\Vocabulary.xlsx')
 ws = wb.worksheets[0]
 ws_tables = []
