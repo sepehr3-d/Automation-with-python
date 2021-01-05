@@ -10,15 +10,15 @@ from openpyxl import load_workbook
 # load google chrome driver and enter url
 driver = webdriver.Chrome('/path/to/chromedriver')
 driver.implicitly_wait(1)
-driver.get("https://abadis.ir")
+driver.get("#site url")
 vacab = driver.find_element_by_id("tb_Word")
 
 # load excel file from your computer
-workbook = xlrd.open_workbook(r'C:\Users\sepehr\PycharmProjects\pythonProjects\pythonProject\Vocabulary.xlsx')
+workbook = xlrd.open_workbook('#excel file path')
 sheet = workbook.sheet_by_name("Sheet")
 
 # i = row number of excel sheet
-i = 588
+i = 200
 
 #read row from excel file
 for curr_row in range(1, i):
@@ -33,25 +33,25 @@ url = driver.current_url
 
 #search items that you want from webpage
 try:
-	meaning_FA = driver.find_element_by_xpath('//*[@id="Means"]/div[1]/div[1]').text
+	meaning_FA = driver.find_element_by_xpath('-----').text
 except:
 	pass
 try:
-	meaning_EN = driver.find_element_by_xpath('//*[@id="EnToFaAnalyze"]/div[2]').text
+	meaning_EN = driver.find_element_by_xpath('------').text
 except:
 	pass
 try:
-	parts_of_speech = driver.find_element_by_xpath('//*[@id="EnToFaAnalyze"]/div[1]').text
+	parts_of_speech = driver.find_element_by_xpath('----------').text
 except:
 	pass
 try:
-	example = driver.find_element_by_xpath('//*[@id="EnToFaAnalyze"]/div[3]').text
+	example = driver.find_element_by_xpath('------').text
 except:
 	pass
 
 
 # load your file again for saving items in the sheet
-wb = load_workbook(filename=r'C:\Users\sepehr\PycharmProjects\pythonProjects\pythonProject\Vocabulary.xlsx')
+wb = load_workbook(filename='#excel file path')
 ws = wb.worksheets[0]
 ws_tables = []
 try:
@@ -76,5 +76,5 @@ except:
 	pass
 driver.close()
 
-wb.save(filename=r'C:\Users\sepehr\PycharmProjects\pythonProjects\pythonProject\Vocabulary.xlsx')
+wb.save(filename='#excel file path')
 
