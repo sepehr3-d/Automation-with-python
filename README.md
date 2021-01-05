@@ -15,12 +15,16 @@ driver.implicitly_wait(1)
 driver.get("#site url")
 vacab = driver.find_element_by_id("tb_Word")
 
+
+
 # load excel file from your computer
 workbook = xlrd.open_workbook('#excel file path')
 sheet = workbook.sheet_by_name("Sheet")
 
 # i = row number of excel sheet
 i = 200
+
+![Snag_7611662](https://user-images.githubusercontent.com/74833281/103674002-782e0200-4f93-11eb-99e7-1669c041847d.png)
 
 #read row from excel file
 for curr_row in range(1, i):
@@ -32,6 +36,8 @@ vacab.send_keys(Vocabulary)
 vacab.send_keys(Keys.RETURN)
 time.sleep(0.1)
 url = driver.current_url
+
+![Snag_76108e5](https://user-images.githubusercontent.com/74833281/103673994-75cba800-4f93-11eb-8401-bbffd784d267.png)
 
 #search items that you want from webpage
 try:
@@ -79,4 +85,6 @@ except:
 driver.close()
 
 wb.save(filename='#excel file path')
+
+![Snag_76122e5](https://user-images.githubusercontent.com/74833281/103674009-7b28f280-4f93-11eb-9005-46114aa7b0d1.png)
 
