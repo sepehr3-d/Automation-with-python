@@ -7,6 +7,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 from openpyxl import load_workbook
 
+https://user-images.githubusercontent.com/74833281/103673988-72d0b780-4f93-11eb-9cce-5d7d9286d943.png
+
 # load google chrome driver and enter url
 driver = webdriver.Chrome('/path/to/chromedriver')
 driver.implicitly_wait(1)
